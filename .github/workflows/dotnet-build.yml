@@ -1,0 +1,16 @@
+name: New Workflow
+
+on:
+  push:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  executar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Usar action existente (checkout)
+        uses: actions/checkout@v4
+
+      - name: Rodar script personalizado
+        run: echo "O workflow esta sendo executado com sucesso."
